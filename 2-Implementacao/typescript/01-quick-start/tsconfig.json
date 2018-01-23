@@ -1,0 +1,9 @@
+// "Dá instruções"/Ajuda na compilação do typscript
+
+{ // Instruções para o compilador
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "sourceMap": true
+  }
+}
