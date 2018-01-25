@@ -11,11 +11,14 @@ import { Contato } from './contato.model';
 import { CONTATOS } from './contatos-mock';
 import { ServiceInterface } from './../interfaces/service.interface';
 
-// Mit metadadados do angular 2 para que possa identificar outras dependencias do ContatoService 
-// e fazer a injeção das independencias de forma correta
+// Mit metadadados do angular 2 para que possa identificar outras dependências do ContatoService 
+// e fazer a injeção das independências de forma correta
 
 // Identifica que é uma classe de serviço
-@Injectable()
+// O @Injectable não afirma que esta classe é realmente um serviço 
+// Mas diz que, este serviço pode depender de outros serviços por isso é preciso usar o @Injectable
+// Para que o sistema de injeção de dependências do angular consiga buscar as dependências desta classe
+@Injectable() 
 export class ContatoService implements ServiceInterface<Contato>{
 
     private contatosUrl: string = 'app/contatos';
